@@ -1,0 +1,109 @@
+@import 'https://fonts.googleapis.com/css?family=Roboto:400,900&subset=cyrillic,cyrillic-ext';
+@import "reset.less";
+@import "settings.less";
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*  Fonts start                               */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+h1, h2, h3, h4, h5, h6, p, a, time, span, small{
+    font-family: "Roboto", sans-serif;
+    font-weight: normal;
+    color: @darkGrey;
+    text-align: left;
+}
+h1{
+    font-size: 3.75em;
+    font-weight: 900;
+}
+h2{
+    font-size: 1.875em;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+h3{ font-size: 1.125em; }
+
+p, a, time{ font-size: 1em; }
+small{ font-size: .875em; }
+a{ text-decoration: none; }
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*  Fonts end                                 */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*  layout start                              */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+html, body{ min-height: 100%; }
+#page,
+#content{
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+}
+.container{
+    width: 100%;
+    height: auto;
+    background: @white;
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*  layout end                                */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*  header start  			                  */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+#header{
+    width: 100%;
+    height: auto;
+    position: relative;
+    & > .logo-holder{
+        width: 240px;
+        height: 240px;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        margin-left: -120px;
+        background: @white;
+        overflow: hidden;
+        a{
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    & > .phone-holder{
+        display: inline-block;
+        position: absolute;
+        top: 60px;
+        right: 60px;
+        overflow: hidden;
+        .square{
+            display: block;
+            width: 15px;
+            height: 15px;
+            background: @white;
+        }
+        .phone-code-holder{
+            display: block;
+            font-size: .875em;
+            padding-left: 30px;
+            color: @white;
+        }
+        & > a{
+            display: block;
+            color: @white;
+            &[href^="tel"]{
+                font-size: 1.875em;
+                font-weight: 900;
+                padding-left: 30px;
+                margin-top: -6px;
+            }
+            &[href^="mailto"]{
+                font-size: .875em;
+                margin-top: 5px;
+            }
+        }
+    }
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*  header end                			      */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
