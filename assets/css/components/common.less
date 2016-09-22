@@ -19,7 +19,11 @@ h2{
     font-weight: 900;
     text-transform: uppercase;
 }
-h3{ font-size: 1.125em; }
+h3{
+    font-size: 1.125em;
+    font-weight: 900;
+    text-transform: uppercase;
+}
 
 p, a, time{ font-size: 1em; }
 small{ font-size: .875em; }
@@ -55,18 +59,18 @@ html, body{ min-height: 100%; }
     height: auto;
     position: relative;
     & > .logo-holder{
-        width: 240px;
-        height: 240px;
+        .square(12.5%, @white);
         position: absolute;
         top: 0;
         left: 50%;
-        margin-left: -120px;
-        background: @white;
-        overflow: hidden;
+        transform: translateX(-50%);
         a{
             display: block;
             width: 100%;
             height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
         }
     }
     & > .phone-holder{
@@ -75,11 +79,8 @@ html, body{ min-height: 100%; }
         top: 60px;
         right: 60px;
         overflow: hidden;
-        .square{
-            display: block;
-            width: 15px;
-            height: 15px;
-            background: @white;
+        .square-holder{
+            .square-fixed(@white);
         }
         .phone-code-holder{
             display: block;

@@ -16,7 +16,23 @@
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*  mixins start                              */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-
+.square(@width: 6.25%, @color: @darkGrey){
+    display: block;
+    width: @width;
+    height: 0;
+    padding-top: @width;
+    position: relative;
+    background: @color;
+    overflow: hidden;
+}
+.square-fixed(@color: @darkGrey){
+    display: block;
+    width: 15px;
+    height: 15px;
+    position: relative;
+    background: @color;
+    overflow: hidden;
+}
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*  mixins end                                */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -34,7 +50,7 @@
         visibility: hidden;
     }
 }
-figure,
+img,
 figure > img{
     display: block;
     width: 100%;
