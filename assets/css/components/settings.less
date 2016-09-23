@@ -9,6 +9,7 @@
 
 
 @images: ~"../images";
+@easing: ease-in-out;
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*  env variables end                         */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -51,11 +52,20 @@
     }
 }
 img,
-figure > img{
+figure img{
     display: block;
     width: 100%;
     height: auto;
     overflow: hidden;
+}
+.svg-holder{
+    position: relative;
+    overflow: hidden;
+    & > svg{
+        position: absolute;
+        top: 0;
+        left: 0;
+    } 
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*  helpers end                               */

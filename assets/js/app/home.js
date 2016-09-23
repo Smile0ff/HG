@@ -1,5 +1,9 @@
 "use strict";
 
 import $ from "jquery";
-import "jquery-validation";
+import ScrollTop from "../utils/scrollTop";
+
+$(() => {
+    new ScrollTop();
+});
 

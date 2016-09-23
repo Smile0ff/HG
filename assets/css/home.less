@@ -8,6 +8,33 @@
         position: relative;
     }
 }
+
+.info-pane(@width: 56.25%){
+    width: @width;
+    height: auto;
+    padding: 120px 120px 120px 150px;
+    box-sizing: border-box;
+    background: @lightGrey;
+    position: relative;
+    z-index: 10;
+}
+.rotated-subtitle(@bg: @green){
+    display: block;
+    width: 240px;
+    height: 90px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    background: @bg;
+    transform-origin: 0% 0%;
+    transform: rotate(-90deg) translateX(-50%);
+    overflow: hidden;
+    h3{
+        color: @white;
+        text-align: center;
+        line-height: 90px;
+    }
+}
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*  layout end                                */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -84,36 +111,16 @@
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 .about-container{
     .about-info-holder{
+        .info-pane;
         width: 56.25%;
-        height: auto;
-        padding: 120px 120px 120px 150px;
-        box-sizing: border-box;
-        background: @lightGrey;
-        position: relative;
-        z-index: 10;
         margin: -240px 0 0 12.5%;
-        overflow: hidden;
         .square-holder{
             .square-fixed;
             margin-top: 30px;
         }
         h2{ padding: 15px 0 30px 30px; }
         & > .subtitle-holder{
-            display: block;
-            width: 240px;
-            height: 90px;
-            position: absolute;
-            top: 50%;
-            left: 0;
-            background: @green;
-            transform-origin: 0% 0%;
-            transform: rotate(-90deg) translateX(-50%);
-            overflow: hidden;
-            h3{
-                color: @white;
-                text-align: center;
-                line-height: 90px;
-            }
+            .rotated-subtitle;
         }
         p{ padding-bottom: 15px; }
     }
@@ -212,35 +219,16 @@
 /*  services start                            */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 .services-container{
-    margin-top: 120px;
+    padding-top: 120px;
     .service-info-holder{
-        width: 62.5%;
-        height: auto;
-        padding: 120px 120px 120px 150px;
-        position: relative;
-        background: @lightGrey;
-        box-sizing: border-box;
-        overflow: hidden;
+        .info-pane(62.5%);
         .square-holder{
             .square-fixed;
+            margin-top: 30px;
         }
         h2{ padding: 15px 0 30px 30px; }
         & > .subtitle-holder{
-            display: block;
-            width: 240px;
-            height: 90px;
-            position: absolute;
-            top: 50%;
-            left: 0;
-            background: @yellow;
-            transform-origin: 0% 0%;
-            transform: rotate(-90deg) translateX(-50%);
-            overflow: hidden;
-            h3{
-                color: @white;
-                text-align: center;
-                line-height: 90px;
-            }
+            .rotated-subtitle(@yellow);
         }
     }
     & > .services{
@@ -265,6 +253,8 @@
                 .item{ background: @darkGrey; }
             }
             & > figure{
+                width: 100%;
+                height: 100%;
                 position: absolute;
                 top: 0;
                 left: 0;
@@ -278,7 +268,16 @@
                     z-index: 2;
                     content: "";
                     background: fade(@darkGrey, 40%);
+                    transition: all .5s @easing;
                     overflow: hidden;
+                }
+                img{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    transition: all .75s @easing;
+                    transform: scale(1);
+                    backface-visibility: hidden;
                 }
             }
             .item{
@@ -310,10 +309,233 @@
                     color: @white;
                     padding: 15px 60px 0 90px;
                 }
+                .arrow-holder{
+                    display: block;
+                    width: 30px;
+                    height: 14px;
+                    position: absolute;
+                    right: 60px;
+                    bottom: 30px;
+                    transition: all .5s @easing;
+                    & > svg{
+                        .shaft,
+                        .arrowhead{
+                            fill: @yellow;
+                        }
+                        .shaft{
+                            transition: all .5s @easing;
+                            transform-origin: 100% 50%;
+                            transform: scaleX(1);
+                        }
+                    }
+                }
+            }
+            &:hover{
+                figure{
+                    &:before{ background: fade(@darkGrey, 0%); }
+                    img{ transform: scale(1.1); }
+                }
+                .item{
+                    .arrow-holder{
+                        transform: translateX(30px);
+                        .shaft{
+                            transform: scaleX(0);
+                        }
+                    }
+                }
             }
         }
     }
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*  services end                              */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*  staff start                               */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.staff-container{
+    padding-top: 120px;
+    .staff-info-holder{
+        .info-pane;
+        margin-left: 6.5%;
+        .square-holder{
+            .square-fixed;
+            margin-top: 30px;
+        }
+        h2{ padding: 15px 0 30px 30px; }
+        & > .subtitle-holder{
+            .rotated-subtitle;
+        }
+    }
+    &  > .staff{
+        width: 100%;
+        height: auto;
+        margin-top: -60px;
+        position: relative;
+        z-index: 20;
+        padding-bottom: 90px;
+        overflow: hidden;
+        .employee-holder{
+            width: 25%;
+            height: 0;
+            padding-top: 25%;
+            position: relative;
+            float: left;
+            overflow: hidden;
+            &:nth-child(odd){
+                top: 90px;
+            }
+            .employee{
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                overflow: hidden;
+                figure{
+                    height: 100%;
+                    position: relative;
+                    overflow: hidden;
+                    img{
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        transition: all .75s @easing;
+                        transform: scale(1);
+                        backface-visibility: hidden;
+                    }
+                    &:before{
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        z-index: 2;
+                        content: "";
+                        background: fade(@darkGrey, 40%);
+                        transition: all .5s @easing;
+                        overflow: hidden;
+                    }
+                    &:after{
+                        display: block;
+                        width: 100%;
+                        height: 5px;
+                        position: absolute;
+                        left: 0;
+                        bottom: -1px;
+                        z-index: 10;
+                        content: "";
+                        background: @green;
+                        overflow: hidden;
+                    }
+                }
+                & > .info{
+                    width: 100%;
+                    height: auto;
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    z-index: 10;
+                    overflow: hidden;
+                    &:before{
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        content: "";
+                        background: fade(@lightGrey, 40%);
+                        transition: all .5s @easing;
+                        transform: translateY(100%);
+                        visibility: hidden;
+                        overflow: hidden;
+                    }
+                    .square-holder{
+                        .square-fixed(@green);
+                        position: absolute;
+                        top: 30px;
+                        left: 30px;
+                        transition: all .5s @easing;
+                        transform: rotate(0deg);
+                        opacity: 0;
+                        visibility: hidden;
+                    }
+                    h3{
+                        position: relative;
+                        z-index: 10;
+                        padding: 45px 30px 0 60px;
+                        font-size: 1em;
+                        color: @darkGrey;
+                        opacity: 0;
+                        transition: all .5s @easing;
+                        visibility: hidden;
+                    }
+                    .position{
+                        display: block;
+                        position: relative;
+                        z-index: 10;
+                        padding: 5px 30px 30px 30px;
+                        color: @darkGrey;
+                        opacity: 0;
+                        transition: all .5s @easing;
+                        visibility: hidden;
+                    }
+                }
+                &:hover{
+                    figure{
+                        img{ transform: scale(1.1); }
+                        &:before{ background: fade(@darkGrey, 0%); }
+                    }
+                    .info{
+                        &:before{
+                            transform: translateY(0);
+                            visibility: visible;
+                        }
+                        .square-holder{
+                            opacity: 1;
+                            transform: rotate(180deg);
+                            visibility: visible;
+                        }
+                        h3,
+                        .position{
+                            opacity: 1;
+                            visibility: visible;
+                            transition: all .5s @easing .25s;
+                        }
+                        .position{ transition: all .5s @easing .5s; }
+                    }
+                }
+            }
+        }
+    }
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*  staff end                                 */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*  contact start                             */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.contact-container{
+    margin-top: -90px;
+    background: @lightGrey;
+    .inner{
+        width: 100%;
+        height: auto;
+        padding: 150px 6.5% 0 31.25%;
+        box-sizing: border-box;
+        overflow: hidden;
+        .square-holder{
+            .square-fixed;
+        }
+        h2{ padding: 15px 0 0 30px; }
+        p{ padding-top: 15px; }
+        .btn{ margin: 60px 0; }
+    }
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*  contact end                               */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
