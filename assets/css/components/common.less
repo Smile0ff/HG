@@ -46,6 +46,13 @@ a{ text-decoration: none; }
     height: auto;
     background: @white;
 }
+
+body{
+    overflow: hidden;
+    &.loaded{
+        overflow: visible;
+    }
+}
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*  layout end                                */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -263,3 +270,269 @@ a{ text-decoration: none; }
 /*  footer end                                */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*  loader start                              */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+#loader-holder{
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999999;
+    background: @white;
+    transform: translateX(0%);
+    transition: all 1s @easing .5s;
+    visibility: visible;
+    overflow: hidden;
+    & > .square{
+        display: block;
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 10;
+        transition: all .5s @easing 0s;
+        transform: translateX(-50%) translateY(-50%);
+        &:nth-child(1){
+            animation: spinSquare 1.5s @easing .25s infinite;
+            background: fade(@green, 100%);
+        }
+        &:nth-child(2){
+            animation: spinSquare 1.5s @easing .20s infinite;
+            background: fade(@green, 75%);
+        }
+        &:nth-child(3){
+            animation: spinSquare 1.5s @easing .15s infinite;
+            background: fade(@green, 60%);
+        }
+        &:nth-child(4){
+            animation: spinSquare 1.5s @easing .10s infinite;
+            background: fade(@green, 45%);
+        }
+        &:nth-child(5){
+            animation: spinSquare 1.5s @easing .05s infinite;
+            background: fade(@green, 30%);
+        }
+    }
+    & > p{
+        display: block;
+        width: 100%;
+        height: auto;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        margin-top: 60px;
+        text-align: center;
+        transform: translateY(-50%);
+        font-size: .875em;
+        transition: all .5s @easing 0s;
+        overflow: hidden;
+    }
+    &.loaded{
+        transform: translateX(100%);
+        visibility: hidden;
+        p{
+            opacity: 0;
+            visibility: hidden;
+        }
+        .square{
+            opacity: 0;
+            visibility: hidden;
+            animation: none
+        }
+    }
+}
+@keyframes spinSquare{
+    0% { transform: translateX(-50%) translateY(-50%) rotate(0deg); }
+    100% { transform: translateX(-50%) translateY(-50%) rotate(360deg); }
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*  loader end                                */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*  landscape cap start                       */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*  landscape cap start                       */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+#lanscape-cap-holder{
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999999;
+    background: @white;
+    overflow: hidden;
+    .inner{
+        width: 100%;
+        height: auto;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        padding: 0 6.25%;
+        box-sizing: border-box;
+        .square-holder{
+            display: block;
+            width: 30px;
+            height: 30px;
+            background: @green;
+        }
+        h2{ padding: 15px 0 15px 45px; }
+    }
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*  landscape cap end                         */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*  adaptive start                            */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+@media only screen @netbook{
+
+    h1{ font-size: 2.5em; }
+    h2{ font-size: 1.5em; }
+    h3{ font-size: 1em; }
+    
+    
+    [class^="btn"]{
+        width: 180px;
+        height: 45px;
+        & > a{
+            font-size: .875em;
+            line-height: 45px;
+        }
+    }
+    
+    #footer-container{
+        .phone-holder,
+        .mail-holder{
+            a{ font-size: .875em; }
+        }
+        p{ font-size: .875em; }
+        & > footer{
+            figure{ width: 30px; }
+        }
+    }
+    #scroll-top-btn{
+        & > .arrow{
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-bottom: 10px solid @white;
+        }
+    }
+
+}
+
+@media only screen @tablet{
+    
+    #header{
+        width: 100%;
+        height: auto;
+        position: relative;
+        overflow: hidden;
+        & > .logo-holder{
+            width: 90px;
+            height: 90px;
+            padding-top: 0;
+            position: relative;
+            top: auto;
+            left: auto;
+            margin: 60px 0 0 60px;
+            float: left;
+            transform: translateX(0%);
+        }
+        & > .phone-holder{
+            position: relative;
+            top: auto;
+            right: auto;
+            margin: 70px 60px 0 0;
+            float: right;
+            .square-holder{ display: none; }
+            .phone-code-holder{ padding: 0; }
+            & > a{
+                &[href^="tel"]{ padding-left: 0; }
+                &:hover{ color: @white; }
+            }
+        }
+    }
+
+    #footer-container{
+        padding-top: 30px;
+        .square-holder{
+            display: none;
+        }
+    }
+    #scroll-top-btn{
+        width: 30px;
+        height: 30px;
+        padding-top: 0;
+        right: 60px;
+        & > .arrow{
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-bottom: 10px solid @white;
+        }
+        &:hover{
+            &:before{
+                transform: translateY(0%);
+            }
+            & > .arrow{
+                border-left: 10px solid transparent;
+                border-right: 10px solid transparent;
+                border-bottom: 10px solid @white;
+            }
+        }
+    }
+
+}
+
+@media only screen @phoneL{
+    
+    h1{ font-size: 1.875em; }
+    h2{ font-size: 1.25em; }
+    h3{ font-size: 1em; }
+    
+    p, a, time{ font-size: .875em; }
+
+    #header{
+        & > .logo-holder{
+            width: 60px;
+            height: 60px;
+            margin: 30px 0 0 30px;
+        }
+        & > .phone-holder{
+            margin: 40px 30px 0 0;
+            .phone-code-holder{ font-size: .75em; }
+            & > a{
+                &[href^="tel"]{
+                    font-size: 1.5em;
+                }
+                &[href^="mailto"]{ display: none; }
+                &:hover{ color: @white; }
+            }
+        }
+    }
+
+    #scroll-top-btn{
+        right: 30px;
+    }
+
+}
+
+@media only screen @landscape{
+    
+    #page{ display: none; }
+    #lanscape-cap-holder{ display: block; }
+
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*  adaptive start                            */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/

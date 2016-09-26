@@ -3,7 +3,7 @@
 <head>
     <title>HG | Business Development</title>
     <meta charset="UTF-8">
-    <!--meta name="HandheldFriendly" content="True">
+    <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
     <meta name="format-detection" content="telephone=no">
@@ -12,7 +12,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="">
-    <meta http-equiv="cleartype" content="on">-->
+    <meta http-equiv="cleartype" content="on">
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
     <meta name="Description" content="Описание необходимых мета-тегов." />
     <!--meta name="msapplication-TileImage" content="assets/images/favicons/ms/144x144.png">
@@ -346,6 +346,40 @@
             </div>   
         </main>
     </div>
+    <div id="loader-holder">
+        <span class="square"></span>
+        <span class="square"></span>
+        <span class="square"></span>
+        <span class="square"></span>
+        <span class="square"></span>
+        <p>Завантажуємо контент...</p>
+    </div>
+    <div id="lanscape-cap-holder">
+        <div class="inner">
+            <span class="square-holder"></span>
+            <h2>Переверніть пристрій</h2>
+            <p>Ми підтримуємо тільки портретну орієнтацію</p>
+        </div>
+    </div>
+    <script>
+        const LOAD_TIME = 3000;
+
+        let loaderHolder = document.querySelector("#loader-holder"),
+            body = document.querySelector("body");
+
+        window.addEventListener("load", (e) => { handleLoad(e) }, false)
+
+        function handleLoad(e){
+            
+            setTimeout(() => {
+                loaderHolder.classList.add("loaded");
+                body.classList.add("loaded")
+            }, LOAD_TIME);
+
+            return false;
+        }
+    </script>
     <script src="build/js/home.dev.bundle.js"></script>
+    <!--script src="build/js/home.bundle.min.js"></script-->
 </body>
 </html>

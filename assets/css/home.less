@@ -539,3 +539,502 @@
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*  contact end                               */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*  adaptive start                            */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+@media only screen @netbook{
+    
+    .info-pane(@width: 56.25%){
+        width: @width;
+        padding: 60px 60px 60px 120px;
+    }
+    .rotated-subtitle(@bg: @green){
+        width: 180px;
+        height: 60px;
+        h3{
+            line-height: 60px;
+            font-size: 1em;
+        }
+    } 
+    
+    .intro-container{
+        & > .inner{
+            h1{ font-size: 2.5em; }
+        }
+    }
+    
+    #scroll-down-holder{
+        & > .square-holder{
+            & > .arrow{
+                border-left: 10px solid transparent;
+                border-right: 10px solid transparent;
+                border-top: 10px solid @white;
+            }
+        }
+        p{ font-size: .875em; }    
+    }
+
+    .about-container{
+        .about-info-holder{
+            .info-pane;
+            margin: -160px 0 0 12.5%;
+            & > .subtitle-holder{
+                .rotated-subtitle;
+            }
+        }
+    }
+
+    .services-container{
+        padding-top: 60px;
+        .service-info-holder{
+            .info-pane(62.5%);
+            h2{ padding: 15px 0 30px 30px; }
+            & > .subtitle-holder{
+                .rotated-subtitle(@yellow);
+            }
+            p{ padding-bottom: 30px; }
+        }
+        & > .services{
+            margin-top: -75px;
+            padding: 0 12.5% 60px 12.5%;
+            .item-holder{
+                .item{
+                    .square-holder{ margin: 30px 0 0 30px; }
+                    h2{
+                        font-size: 1em;
+                        padding: 15px 60px 0 60px;
+                    }
+                    .arrow-holder{
+                        right: 45px;
+                        bottom: 30px;
+                    }
+                }
+                &:hover{
+                    .item{
+                        .arrow-holder{ transform: translateX(15px); }
+                    }
+                }
+            }
+        }
+    }
+
+    .staff-container{
+        padding-top: 60px;
+        .staff-info-holder{
+            .info-pane;
+            & > .subtitle-holder{
+                .rotated-subtitle;
+            }
+            p{ padding-bottom: 30px; }
+        }
+        &  > .staff{
+            margin-top: -30px;
+            padding-bottom: 60px;
+            .employee-holder{
+                &:nth-child(odd){
+                    top: 60px;
+                }
+            }
+        }
+    }
+
+    .contact-container{
+        margin-top: -60px;
+        .inner{
+            padding: 90px 6.5% 0 31.25%;
+            .btn{ margin: 30px 0 60px; }
+        }
+    }
+
+}
+
+@media only screen @tablet{
+    
+    .info-pane(@width: 56.25%){
+        width: @width;
+        padding: 60px 60px 45px;
+    }
+    .rotated-subtitle(@bg: @green){
+        width: 180px;
+        height: 60px;
+        top: 0;
+        left: 0;
+        background: @bg;
+        transform: rotate(0deg) translateX(0%);
+        h3{ line-height: 60px; }
+    }
+
+    .intro-container{
+        background: @white url("@{images}/intro-bg.jpg") no-repeat 0% 50%;
+        background-size: cover;
+        & > .inner{
+            padding: 0 60px;
+            & > .square-holder{
+                width: 30px;
+                height: 30px;
+                padding-top: 0;
+            }
+            h1{ padding: 30px 0 0; }
+        }
+    }
+    #scroll-down-holder{
+        width: 120px;
+        height: auto;
+        padding-top: 0;
+        right: 50%;
+        bottom: 120px;
+        transform: translateX(50%);
+        overflow: hidden;
+        & > .square-holder{
+            width: 30px;
+            height: 30px;
+            padding-top: 0;
+            position: relative;
+            margin: 0 auto;
+            background: transparent;
+            & > .arrow{
+                border-left: 10px solid transparent;
+                border-right: 10px solid transparent;
+                border-top: 10px solid @white;
+            }
+        }
+        p{
+            display: block;
+            position: relative;
+            top: auto;
+            left: auto;
+            text-align: center;
+        }    
+    }
+    
+    .about-container{
+        padding: 0 60px;
+        box-sizing: border-box;
+        .about-info-holder{
+            .info-pane(100%);
+            margin: -75px 0 0 0;
+            .square-holder{
+                .square-fixed;
+                margin-top: 30px;
+            }
+            h2{ padding: 15px 0; }
+            & > .subtitle-holder{
+                .rotated-subtitle;
+            }
+            p{ padding-bottom: 15px; }
+        }
+        .benefits-holder{
+            margin-top: 0;
+            background: transparent;
+            background-size: auto;
+            & > .benefits{
+                width: 100%;
+                padding-left: 0;
+                margin-top: 60px;
+                .item{
+                    width: 50%;
+                    .square-holder{
+                        .square(50%);
+                        margin: 0 auto;
+                        .number{
+                            font-size: 3em;
+                        }
+                    }
+                    p{
+                        display: block;
+                        padding: 15px 30px 0;
+                        text-align: center;
+                    }
+                }
+            }
+            & > .distinction-holder{
+                width: 100%;
+                margin-top: 60px;
+                padding: 0;
+                h3{ padding: 15px 0 0 0; }
+                ul{ margin-top: 15px; }
+            }
+        }
+    }
+
+    .services-container{
+        padding: 60px 60px 0;
+        box-sizing: border-box;
+        .service-info-holder{
+            .info-pane(100%);
+            .square-holder{
+                .square-fixed;
+                margin-top: 30px;
+            }
+            h2{ padding: 15px 0; }
+            & > .subtitle-holder{
+                .rotated-subtitle(@yellow);
+            }
+        }
+        & > .services{
+            width: 100%;
+            margin-top: 30px;
+            padding: 0;
+            .item-holder{
+                width: 100%;
+                padding-top: 50%;
+                &:nth-child(odd){ top: auto; }
+                .item{
+                    .square-holder{
+                        margin: 0;
+                        top: 60px;
+                        left: 60px;
+                    }
+                    h2{
+                        font-size: 1.125em;
+                        padding: 75px 60px 0 60px;
+                    }
+                    .arrow-holder{
+                        right: 45px;
+                    }
+                }
+            }
+        }
+    }
+
+    .staff-container{
+        padding: 60px 60px 0;
+        box-sizing: border-box;
+        .staff-info-holder{
+            .info-pane(100%);
+            margin-left: 0;
+            .square-holder{
+                .square-fixed;
+                margin-top: 30px;
+            }
+            h2{ padding: 15px 0px; }
+            & > .subtitle-holder{
+                .rotated-subtitle;
+            }
+        }
+        &  > .staff{
+            margin-top: 0;
+            padding-bottom: 0;
+            .employee-holder{
+                width: 47.68518518518519%;
+                padding-top: 47.68518518518519%;
+                position: relative;
+                float: left;
+                margin: 30px 0 0 4.62962962962963%;
+                overflow: hidden;
+                &:nth-child(odd){
+                    top: auto;
+                    margin-left: 0;
+                }
+                .employee{
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    pointer-events: none;
+                    overflow: hidden;
+                    figure{
+                        height: 100%;
+                        position: relative;
+                        overflow: hidden;
+                        img{
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            transition: all .75s @easing;
+                            transform: scale(1);
+                            backface-visibility: hidden;
+                        }
+                        &:before{
+                            display: block;
+                            width: 100%;
+                            height: 100%;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            z-index: 2;
+                            content: "";
+                            background: fade(@darkGrey, 40%);
+                            transition: all .5s @easing;
+                            overflow: hidden;
+                        }
+                        &:after{
+                            display: block;
+                            width: 100%;
+                            height: 5px;
+                            position: absolute;
+                            left: 0;
+                            bottom: -1px;
+                            z-index: 10;
+                            content: "";
+                            background: @green;
+                            overflow: hidden;
+                        }
+                    }
+                    & > .info{
+                        &:before{
+                            transform: translateY(0%);
+                            visibility: visible;
+                        }
+                        .square-holder{ display: none; }
+                        h3{
+                            padding: 30px 30px 0 30px;
+                            opacity: 1;
+                            visibility: visible;
+                        }
+                        .position{
+                            padding: 5px 30px 30px 30px;
+                            opacity: 1;
+                            visibility: visible;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .contact-container{
+        margin-top: 60px;
+        .inner{
+            padding: 60px 60px 0;
+            h2{ padding: 15px 0 0 0px; }
+            .btn{ margin: 30px 0 60px; }
+        }
+    }
+
+}
+
+@media only screen @phoneL{
+    
+    .info-pane(@width: 56.25%){
+        width: @width;
+        padding: 30px 30px 15px;
+    }
+    .rotated-subtitle(@bg: @green){
+        width: 180px;
+        height: 45px;
+        h3{
+            font-size: .875em;
+            line-height: 45px;
+        }
+    }
+
+    .intro-container{
+        & > .inner{
+            padding: 0 30px;
+            h1{ font-size: 1.875em; }
+        }
+    }
+    #scroll-down-holder{
+        bottom: 90px;    
+    }
+    
+    .about-container{
+        padding: 0 30px;
+        .about-info-holder{
+            .info-pane(100%);
+            margin: -60px 0 0 0;
+            & > .subtitle-holder{
+                .rotated-subtitle;
+            }
+        }
+        .benefits-holder{
+            & > .benefits{
+                width: 100%;
+                padding-left: 0;
+                margin-top: 30px;
+                .item{
+                    width: 45.76271186440678%;
+                    margin-right: 8.474576271186441%;
+                    &:last-child{ margin-right: 0; }
+                    .square-holder{
+                        .square(100%);
+                        margin: 0 auto;
+                    }
+                    p{ padding: 15px 0 0; }
+                }
+            }
+            & > .distinction-holder{
+                margin-top: 30px;
+            }
+        }
+    }
+
+    .services-container{
+        padding: 60px 30px 0;
+        .service-info-holder{
+            .info-pane(100%);
+            & > .subtitle-holder{
+                .rotated-subtitle(@yellow);
+            }
+        }
+        & > .services{
+            margin-top: 30px;
+            .item-holder{
+                .item{
+                    .square-holder{ display: none; }
+                    h2{
+                        font-size: 1em;
+                        padding: 30px 30px 0 30px;
+                    }
+                    .arrow-holder{ right: 30px; }
+                }
+            }
+        }
+    }
+
+    .staff-container{
+        padding: 60px 30px 0;
+        .staff-info-holder{
+            .info-pane(100%);
+            margin-bottom: 15px;
+            & > .subtitle-holder{
+                .rotated-subtitle;
+            }
+        }
+        &  > .staff{
+            .employee-holder{
+                width: 100%;
+                padding-top: 100%;
+                float: none;
+                margin: 15px 0 0 0;
+                &:nth-child(odd){
+                    margin-left: 0;
+                }
+                .employee{
+                    figure{
+                        &:before{
+                            background: fade(@darkGrey, 0%);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .contact-container{
+        margin-top: 60px;
+        .inner{
+            padding: 30px 30px 0;
+            h2{ padding: 15px 0 0 0px; }
+            .btn{ margin: 30px 0; }
+        }
+    }
+
+}
+
+@media only screen @phoneS{
+
+    .intro-container{
+        & > .inner{
+            .square-holder{ display: none; }
+            h1{ padding: 0; }
+        }
+    }
+
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*  adaptive end                              */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
