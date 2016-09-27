@@ -110,6 +110,15 @@ body{
             }
             &:hover{ color: @green; }
         }
+        &.black{
+            .square-holder{
+                background: @darkGrey;
+            }
+            .phone-code-holder,
+            a{
+                color: @darkGrey;
+            }
+        }
     }
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -293,26 +302,30 @@ body{
         position: absolute;
         top: 50%;
         left: 50%;
-        z-index: 10;
         transition: all .5s @easing 0s;
         transform: translateX(-50%) translateY(-50%);
         &:nth-child(1){
+            z-index: 10;
             animation: spinSquare 1.5s @easing .25s infinite;
             background: fade(@green, 100%);
         }
         &:nth-child(2){
+            z-index: 9;
             animation: spinSquare 1.5s @easing .20s infinite;
             background: fade(@green, 75%);
         }
         &:nth-child(3){
+            z-index: 8;
             animation: spinSquare 1.5s @easing .15s infinite;
             background: fade(@green, 60%);
         }
         &:nth-child(4){
+            z-index: 7;
             animation: spinSquare 1.5s @easing .10s infinite;
             background: fade(@green, 45%);
         }
         &:nth-child(5){
+            z-index: 6;
             animation: spinSquare 1.5s @easing .05s infinite;
             background: fade(@green, 30%);
         }

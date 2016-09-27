@@ -8,7 +8,8 @@ var webpack = require("webpack"),
 
 module.exports = {
     entry: {
-        home: "./assets/js/app/home.js"
+        home: "./assets/js/app/home.js",
+        service: "./assets/js/app/service.js"
     },
     output: {
         path: path.join(__dirname, "build/js"),
