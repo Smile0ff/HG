@@ -9,7 +9,8 @@ var webpack = require("webpack"),
 module.exports = {
     entry: {
         home: "./assets/js/app/home.js",
-        service: "./assets/js/app/service.js"
+        service: "./assets/js/app/service.js",
+        contacts: "./assets/js/app/contacts.js"
     },
     output: {
         path: path.join(__dirname, "build/js"),
@@ -19,7 +20,8 @@ module.exports = {
     resolve: {
         alias: {
             "jquery": cfg.vendors + "/jquery.min",
-            "jquery-validation": cfg.vendors + "/jquery.validate"
+            "jquery-validation": cfg.vendors + "/jquery.validate",
+            "google-maps": cfg.vendors + "/Google.min.js"
         },
         extensions: ["", ".js", ".es6"]
     },
@@ -44,7 +46,8 @@ module.exports = {
         }),
         new CopyWebpackPlugin([
             { from: node_path + "/jquery/dist/jquery.min.js", to: cfg.vendors },
-            { from: node_path + "/jquery-validation/dist/jquery.validate.js", to: cfg.vendors }
+            { from: node_path + "/jquery-validation/dist/jquery.validate.js", to: cfg.vendors },
+            { from: node_path + "/google-maps/lib/Google.min.js", to: cfg.vendors }
         ])
     ],
     devtool: "eval-source-map"
