@@ -94,13 +94,13 @@
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a dignissim enim. Nullam blandit massa nec accumsan ornare. Sed eros risus, lobortis vitae felis et, dignissim pharetra purus</p>
                         <form action="http://localhost:27017/feedback" method="POST" id="feedback-form" novalidate>
                             <div class="field-holder">
-                                <input type="text" name="feedback[name]" value="" placeholder="Введіть ваше ім'я" id="feedback-name" data-rule-required="true" data-msg-required="Це поле не може бути порожнім">
+                                <input type="text" name="feedback_name" value="" placeholder="Введіть ваше ім'я" id="feedback-name" data-rule-required="true" data-msg-required="Це поле не може бути порожнім">
                             </div>
                             <div class="field-holder">
-                                <input type="email" name="feedback[email]" value="" placeholder="Введіть ваш e-mail" id="feedback-email" data-rule-required="true" data-msg-required="Це поле не може бути порожнім" data-rule-email="true" data-msg-email="Це не схоже на справжній e-mail">
+                                <input type="email" name="feedback_email" value="" placeholder="Введіть ваш e-mail" id="feedback-email" data-rule-required="true" data-msg-required="Це поле не може бути порожнім" data-rule-email="true" data-msg-email="Це не схоже на справжній e-mail">
                             </div>
                             <div class="field-holder">
-                                <textarea name="feedback[message]" value="" placeholder="Введіть ваше повідомлення" id="feedback-message" data-rule-required="true" data-msg-required="Це поле не може бути порожнім"></textarea>
+                                <textarea name="feedback_message" value="" placeholder="Введіть ваше повідомлення" id="feedback-message" data-rule-required="true" data-msg-required="Це поле не може бути порожнім"></textarea>
                             </div>
                             <button type="submit">
                                 <span>Надіслати</span>

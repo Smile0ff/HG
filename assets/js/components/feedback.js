@@ -11,7 +11,7 @@ class Feedback{
         this._events();
     }
     _events(){
-        FORM.on("submit", (e) => { this._handleForm(e) });
+        FORM.on("submit", (e) => { this._handleForm(e); });
     }
     _handleForm(e){
         e.preventDefault();
@@ -21,14 +21,20 @@ class Feedback{
         this.isLoading = true;
 
         let formAction = FORM.attr("action"),
-            formData = new FormData(FORM[0]);
+            formData = FORM.serializeArray();
 
         sendFeedback(formAction, formData)
-            .then((response) => {
+            .done((response) => {
+                
+
+                FORM[0].reset();
+            })
+            .fail((error) => {
+                error = JSON.parse(error.responseText);
                 
             })
-            .catch((error) => {
-
+            .always(() => {
+                this.isLoading = false;
             });
 
         return false;

@@ -2,10 +2,10 @@
 
 export function sendFeedback(url, data){
 
-    return fetch(url, {
-        method: "POST",
-        mode: "cors",
-        body: data
+    return $.ajax({
+        url: url,
+        type: "POST",
+        data: data
     });
 
 }

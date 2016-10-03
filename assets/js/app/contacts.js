@@ -24,8 +24,6 @@ GoogleMapsLoader.load((google) => {
 });*/
 
 $(() => {
-
     new Feedback();
-
     $("form").validate();
 });
