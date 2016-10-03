@@ -59,7 +59,55 @@
                         </div>
                     </div>
                 </div>
+                <div class="contact-info-holder">
+                    <h2>Контакти</h2>
+                    <ul>
+                        <li>
+                            <span class="square-holder"></span>
+                            <span class="upper-title">Телефон</span>
+                            <a href="tel:+380442904073">+38 (044) 290-40-73</a>
+                        </li>
+                        <li>
+                            <span class="square-holder"></span>
+                            <span class="upper-title">E-mail</span>
+                            <a href="mailto:businessdevelopment@gmail.com ">businessdevelopment@gmail.com </a>
+                        </li>
+                        <li>
+                            <span class="square-holder"></span>
+                            <span class="upper-title">Юридична адреса</span>
+                            <p>Україна, 01004 , м. Київ, вул. Басейна 5Б</p>
+                        </li>
+                        <li>
+                            <span class="square-holder"></span>
+                            <span class="upper-title">Адреса для листування</span>
+                            <p>Україна, 01030 , м. Київ, вул. Володимирська 38, офіс 3. </p>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="container feedback-container">
                 <div id="map"></div>
+                <div class="form-holder">
+                    <div class="inner">
+                        <span class="square-holder"></span>
+                        <h2>Напишіть нам</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a dignissim enim. Nullam blandit massa nec accumsan ornare. Sed eros risus, lobortis vitae felis et, dignissim pharetra purus</p>
+                        <form action="http://localhost:27017/feedback" method="POST" id="feedback-form" novalidate>
+                            <div class="field-holder">
+                                <input type="text" name="feedback[name]" value="" placeholder="Введіть ваше ім'я" id="feedback-name" data-rule-required="true" data-msg-required="Це поле не може бути порожнім">
+                            </div>
+                            <div class="field-holder">
+                                <input type="email" name="feedback[email]" value="" placeholder="Введіть ваш e-mail" id="feedback-email" data-rule-required="true" data-msg-required="Це поле не може бути порожнім" data-rule-email="true" data-msg-email="Це не схоже на справжній e-mail">
+                            </div>
+                            <div class="field-holder">
+                                <textarea name="feedback[message]" value="" placeholder="Введіть ваше повідомлення" id="feedback-message" data-rule-required="true" data-msg-required="Це поле не може бути порожнім"></textarea>
+                            </div>
+                            <button type="submit">
+                                <span>Надіслати</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
             </section>
         </main>
     </div>

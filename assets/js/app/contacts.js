@@ -2,8 +2,9 @@
 
 import "jquery";
 import "jquery-validation";
+import Feedback from "../components/feedback";
 
-import GoogleMapsLoader from "google-maps";
+/*import GoogleMapsLoader from "google-maps";
 
 GoogleMapsLoader.KEY = "AIzaSyDWQ8KabiEnj1NhMT93d-LqytUlFZYIZxk";
 
@@ -20,4 +21,11 @@ GoogleMapsLoader.load((google) => {
         zoom: 18
     });
 
+});*/
+
+$(() => {
+
+    new Feedback();
+
+    $("form").validate();
 });
