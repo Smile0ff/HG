@@ -93,6 +93,7 @@
                         <h2>Напишіть нам</h2>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a dignissim enim. Nullam blandit massa nec accumsan ornare. Sed eros risus, lobortis vitae felis et, dignissim pharetra purus</p>
                         <form action="http://localhost:27017/feedback" method="POST" id="feedback-form" novalidate>
+                            <div id="response-holder" data-close-notify="клацніть щоб закрити"></div>
                             <div class="field-holder">
                                 <input type="text" name="feedback_name" value="" placeholder="Введіть ваше ім'я" id="feedback-name" data-rule-required="true" data-msg-required="Це поле не може бути порожнім">
                             </div>
@@ -102,13 +103,24 @@
                             <div class="field-holder">
                                 <textarea name="feedback_message" value="" placeholder="Введіть ваше повідомлення" id="feedback-message" data-rule-required="true" data-msg-required="Це поле не може бути порожнім"></textarea>
                             </div>
-                            <button type="submit">
-                                <span>Надіслати</span>
+                            <button type="submit" class="ajax-loading" id="feedback-btn">
+                                <span class="text">Надіслати</span>
+                                <span class="loading-holder">
+                                    <span></span>
+                                </span>
                             </button>
                         </form>
                     </div>
                 </div>
             </section>
+            <footer id="footer">
+                <figure>
+                    <a href="#">
+                        <img src="build/images/cheers-logo.png" alt="CHEERS - Unlimited Web Production">
+                    </a>
+                </figure>
+                <small>© 2016. All rights reserved. Designed and Created by <a href="#">CHEERS - Unlimited Web Production</a></small>
+            </footer>
         </main>
     </div>
     <div id="loader-holder" class="loaded">

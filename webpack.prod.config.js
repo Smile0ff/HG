@@ -54,6 +54,7 @@ module.exports = {
             { from: node_path + "/jquery-validation/dist/jquery.validate.js", to: cfg.vendors },
             { from: node_path + "/google-maps/lib/Google.min.js", to: cfg.vendors }
         ])
-    ]
+    ],
+    cache: false
 }
 

@@ -21,16 +21,21 @@ app.use((req, res, next) => {
 
 app.post("/feedback", (req, res, next) => {
 
-    let formData = req.body;
+    setTimeout(() => {
 
-    if(formData.feedback_name.length <= 3){
-        return next({
-            status: 500,
-            message: "failed"
-        });
-    }
+        let formData = req.body;
 
-    res.json({message: "success"});
+        if(formData.feedback_name.length < 3){
+            return next({
+                status: 500,
+                message: "failed"
+            });
+        }
+
+        res.json({message: "success"});
+
+    }, 2000);
+    
 });
 
 app.use((err, req, res, next) => {

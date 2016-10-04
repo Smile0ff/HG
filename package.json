@@ -4,7 +4,7 @@
   "description": "HG - business development",
   "main": "index.js",
   "scripts": {
-    "dev-api": "nodemon --exec babel-node server/api.js",
+    "dev-api": "babel-node server/api.js",
     "dev-server": "webpack-dev-server --hot --inline --colors --history-api-fallback --port 3333",
     "dev": "set NODE_ENV=development && webpack",
     "dev-build": "npm run dev && npm run dev-server",
@@ -33,7 +33,6 @@
     "gulp-imagemin": "^3.0.3",
     "imagemin-pngquant": "^5.0.0",
     "method-override": "^2.3.6",
-    "nodemon": "^1.10.2",
     "webpack": "^1.13.2"
   },
   "dependencies": {

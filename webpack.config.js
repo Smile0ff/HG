@@ -50,6 +50,7 @@ module.exports = {
             { from: node_path + "/google-maps/lib/Google.min.js", to: cfg.vendors }
         ])
     ],
-    devtool: "eval-source-map"
+    devtool: "eval-source-map",
+    cache: false
 }
 
