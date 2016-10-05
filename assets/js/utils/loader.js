@@ -1,4 +1,4 @@
-const LOAD_TIME = 3000;
+const LOAD_TIME = 2000;
 
 let loaderHolder = $("#loader-holder"),
     body = $("body");
@@ -6,13 +6,12 @@ let loaderHolder = $("#loader-holder"),
 class Loader{
 
     constructor(){
-        this._events();
+        (document.readyState === "complete") ? this._handleLoad() : this._events();
     }
     _events(){
-        $(window).on("load", (e) => { this._handleLoad(e) });
+        $(window).on("load", (e) => { this._handleLoad() });
     }
-    _handleLoad(e){
-
+    _handleLoad(){
         setTimeout(() => {
 
             loaderHolder.addClass("loaded");

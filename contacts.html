@@ -33,7 +33,7 @@
     <link rel="icon" type="image/png" href="assets/images/favicons/192x192.png"-->
     <link rel="stylesheet" href="build/css/contacts.bundle.min.css">
 </head>
-<body class="loaded">
+<body>
     <div id="page">
         <main id="content">
             <header id="header">
@@ -86,7 +86,6 @@
                 </div>
             </section>
             <section class="container feedback-container">
-                <div id="map"></div>
                 <div class="form-holder">
                     <div class="inner">
                         <span class="square-holder"></span>
@@ -112,6 +111,7 @@
                         </form>
                     </div>
                 </div>
+                <div id="map"></div>
             </section>
             <footer id="footer">
                 <figure>
@@ -123,7 +123,7 @@
             </footer>
         </main>
     </div>
-    <div id="loader-holder" class="loaded">
+    <div id="loader-holder">
         <span class="square"></span>
         <span class="square"></span>
         <span class="square"></span>
@@ -138,7 +138,7 @@
             <p>Ми підтримуємо тільки портретну орієнтацію</p>
         </div>
     </div>
-    <script>
+    <!--script>
         const LOAD_TIME = 3000;
 
         let loaderHolder = document.querySelector("#loader-holder"),
@@ -156,7 +156,7 @@
             return false;
         }
     </script>
-    <script src="build/js/contacts.dev.bundle.js"></script>
-    <!--script src="build/js/contacts.bundle.min.js"></script-->
+    <script src="build/js/contacts.dev.bundle.js"></script-->
+    <script src="build/js/contacts.bundle.min.js"></script>
 </body>
 </html>
